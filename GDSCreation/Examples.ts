@@ -12,12 +12,12 @@
 const EXAMPLE_ONE: IRequest_GDSCreation = {
     name: "Mr. House",
     structure: {
-        components: [{
+        parts: [{
             type: "Filters",
             filters: [{
-                subject: "Borehole Name",
-                predicate: "=",
-                value: "BH00_"
+                s: "Borehole Name",
+                p: "=",
+                v: "BH00_"
             }]
         }]
     }
@@ -27,19 +27,19 @@ const EXAMPLE_ONE: IRequest_GDSCreation = {
 const EXAMPLE_TWO: IRequest_GDSCreation = {
     name: "Caesar",
     structure: {
-        components: [{
+        parts: [{
             type: "Filters",
             filters: [{
-                subject: "Borehole Name",
-                predicate: "=",
-                value: "BH00_"
+                s: "Borehole Name",
+                p: "=",
+                v: "BH00_"
             },
             {
-                subject: "Collar Location",
-                predicate: "WITHIN",
-                value: "polygon1"
+                s: "Collar Location",
+                p: "WITHIN",
+                v: "polygon1"
             }],
-            filterOperator: "AND"
+            filterJoiner: "AND"
         }],
     }
 }
@@ -48,30 +48,30 @@ const EXAMPLE_TWO: IRequest_GDSCreation = {
 const EXAMPLE_THREE: IRequest_GDSCreation = {
     name: "Yes Man",
     structure: {
-        components: [{
+        parts: [{
             type: "Group",
-            components: [{
+            parts: [{
                 type: "Filters",
                 filters: [{
-                    subject: "Borehole Name",
-                    predicate: "=",
-                    value: "BH00_"
+                    s: "Borehole Name",
+                    p: "=",
+                    v: "BH00_"
                 },{
-                    subject: "Collar Location",
-                    predicate: "NOT WITHIN",
-                    value: "polygon1"
+                    s: "Collar Location",
+                    p: "NOT WITHIN",
+                    v: "polygon1"
                 }],
-                filterOperator: "OR"
+                filterJoiner: "OR"
             }]
         },{
             type: "Filters",
             filters: [{
-                subject: "Collar Location",
-                predicate: "WITHIN",
-                value: "polygon1"
+                s: "Collar Location",
+                p: "WITHIN",
+                v: "polygon1"
             }]
         }],
-        groupOperator: "AND",
+        partJoiner: "AND",
     }
 }
 
@@ -84,45 +84,44 @@ interface Component {
 const EXAMPLE_FOUR: IRequest_GDSCreation = {
     name: "New California Republic",
     structure: {
-        components: [{
+        parts: [{
             type: "Group",
-            components: [{
+            parts: [{
                 type: "Filters",
                 filters: [{
-                    subject: "Borehole Name",
-                    predicate: "=",
-                    value: "BH00_"
+                    s: "Borehole Name",
+                    p: "=",
+                    v: "BH00_"
                 },{
-                    subject: "Collar Location",
-                    predicate: "NOT WITHIN",
-                    value: "polygon1"
+                    s: "Collar Location",
+                    p: "NOT WITHIN",
+                    v: "polygon1"
                 }],
-                filterOperator: "OR"
+                filterJoiner: "OR"
             }],
-            groupOperator: "AND"
         },{
             type: "Filters",
             filters: [{
-                subject: "Collar Location",
-                predicate: "WITHIN",
-                value: "polygon1"
+                s: "Collar Location",
+                p: "WITHIN",
+                v: "polygon1"
             },{
-                subject: "Borehole Name",
-                predicate: "=",
-                value: "BH00%"
+                s: "Borehole Name",
+                p: "=",
+                v: "BH00%"
             }],
-            filterOperator: "OR",
+            filterJoiner: "OR",
             linkedFilters: {
                 type: "Filters",
                 filters: [{
-                    subject: "Collar Location",
-                    predicate: "NOT WITHIN",
-                    value: "polygon1"
+                    s: "Collar Location",
+                    p: "NOT WITHIN",
+                    v: "polygon1"
                 }]
             },
-            linkedFiltersOperator: "AND"
+            linkedFiltersJoiner: "AND"
         }],
-        groupOperator: "AND",
+        partJoiner: "AND",
     }
 }
 
@@ -130,32 +129,32 @@ const EXAMPLE_FOUR: IRequest_GDSCreation = {
 const EXAMPLE_SIX: IRequest_GDSCreation = {
     name: "New California Republic",
     structure: {
-        components: [{
+        parts: [{
             type: "Group",
-            components: [{
+            parts: [{
                 type: "Group",
-                components: [{
+                parts: [{
                     type: "Filters",
                     filters: [{
-                        subject: "Borehole Name",
-                        predicate: "=",
-                        value: "BH00_"
+                        s: "Borehole Name",
+                        p: "=",
+                        v: "BH00_"
                     },{
-                        subject: "Collar Location",
-                        predicate: "NOT WITHIN",
-                        value: "polygon1"
+                        s: "Collar Location",
+                        p: "NOT WITHIN",
+                        v: "polygon1"
                     }],
-                    filterOperator: "OR"
+                    filterJoiner: "OR"
                 }],
             },{
                 type: "Filters",
                 filters: [{
-                    subject: "Borehole Name",
-                    predicate: "=",
-                    value: "BH00_"
+                    s: "Collar Location",
+                    p: "NOT WITHIN",
+                    v: "polygon1"
                 }]
             }],
-            groupOperator: "AND"
+            partJoiner: "AND"
         }]
     }
 }
@@ -164,28 +163,28 @@ const EXAMPLE_SIX: IRequest_GDSCreation = {
 const EXAMPLE_SEVEN: IRequest_GDSCreation = {
     name: "Brotherhood of Steel",
     structure: {
-        components: [{
+        parts: [{
             type: "Filters",
             filters: [{
-                subject: "Borehole Name",
-                predicate: "=",
-                value: "BH00_"
+                s: "Borehole Name",
+                p: "=",
+                v: "BH00_"
             },
             {
-                subject: "Collar Location",
-                predicate: "WITHIN",
-                value: "polygon1"
+                s: "Collar Location",
+                p: "WITHIN",
+                v: "polygon1"
             }],
-            filterOperator: "AND",
+            filterJoiner: "AND",
             linkedFilters: {
                 type: "Filters",
                 filters: [{
-                    subject: "Borehole Name",
-                    predicate: "=",
-                    value: "BH004"
+                    s: "Borehole Name",
+                    p: "=",
+                    v: "BH004"
                 }]
             },
-            linkedFiltersOperator: "OR"
+            linkedFiltersJoiner: "OR"
         }],
     }
 }

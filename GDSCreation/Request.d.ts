@@ -18,11 +18,11 @@ interface IGroupBase {
      * Because the left and right hand sides are sub-expressions, these objects recurse down splitting each sub-expression into further reduced left and right
      * expressions until the entire expression is deconstructed.
      */
-    components: (IFilters | IGroup)[];
+    parts: (IFilters | IGroup)[];
     /**
      * top level Components described above are joined together by a logical operator indicated here.
      */
-    groupOperator?: Operator;
+    partJoiner?: Operator;
 }
 
 /**
@@ -34,20 +34,20 @@ interface IFilters {
     // Array of filters, these filters will all be joined by THE SAME OPERATOR. Mixing operators requires a nested Filters Object.
     filters: IFilter[];
     // The operator that joins the filters described above.
-    filterOperator?: Operator;
+    filterJoiner?: Operator;
     // A nested IFilters object, to allow linking of filters using a different operator
     linkedFilters?: IFilters;
     // The operator that joins "linkedFilters" sub expression to "filters" sub expression
-    linkedFiltersOperator?: Operator;
+    linkedFiltersJoiner?: Operator;
 }
 
 /**
  * A singular Filter
  */
 interface IFilter {
-    subject: SubjectFilters;
-    predicate: Predicates;
-    value: SubjectValue;
+    s: SubjectFilters;
+    p: Predicates;
+    v: SubjectValue;
 }
 
 /**
