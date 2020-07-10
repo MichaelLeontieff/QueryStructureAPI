@@ -1,0 +1,20 @@
+{
+  "name": "querystructureapi",
+  "version": "1.0.0",
+  "description": "This assumes a 3DSpace, Geoscience Survey Service coupled architecture. Meaning that the artefact id's may be either id's from 3DSpace or GSS, depending on whether said artefact has p&O that is managed in 3DSpace.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelLeontieff/QueryStructureAPI.git"
+  },
+  "author": "Michael Leontieff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelLeontieff/QueryStructureAPI/issues"
+  },
+  "homepage": "https://github.com/MichaelLeontieff/QueryStructureAPI#readme"
+}
