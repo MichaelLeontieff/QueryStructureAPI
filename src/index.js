@@ -41,4 +41,5 @@ console.log("Example Four: " + processStructure(Examples_1.EXAMPLE_FOUR.structur
 console.log("Example Five: " + processStructure(Examples_1.EXAMPLE_FIVE.structure));
 console.log("Example Six: " + processStructure(Examples_1.EXAMPLE_SIX.structure));
 console.log("Example Seven: " + processStructure(Examples_1.EXAMPLE_SEVEN.structure));
+console.log("Example Eight: " + processStructure(Examples_1.EXAMPLE_EIGHT.structure));
 //# sourceMappingURL=index.js.map

@@ -5,7 +5,8 @@ import {
     EXAMPLE_FOUR,
     EXAMPLE_FIVE,
     EXAMPLE_SIX,
-    EXAMPLE_SEVEN 
+    EXAMPLE_SEVEN,
+    EXAMPLE_EIGHT
 } from "./GDSCreation/Examples";
 
 const processStructure = (links: ILink[]): string => {
@@ -60,3 +61,5 @@ console.log(`Example Five: ${processStructure(EXAMPLE_FIVE.structure)}`);
 console.log(`Example Six: ${processStructure(EXAMPLE_SIX.structure)}`);
 
 console.log(`Example Seven: ${processStructure(EXAMPLE_SEVEN.structure)}`);
+
+console.log(`Example Eight: ${processStructure(EXAMPLE_EIGHT.structure)}`);

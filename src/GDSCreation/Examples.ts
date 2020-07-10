@@ -179,3 +179,49 @@ export const EXAMPLE_SEVEN: IRequest_GDSCreation = {
         }
     }]
 }
+
+
+// GDSQL:
+// (Borehole Name = BH00_ AND ((Collar Location WITHIN polygon1 AND Borehole Name = BH003%) 
+// OR Borehole Name = BH001) OR Borehole Name = BH004)
+export const EXAMPLE_EIGHT: IRequest_GDSCreation = {
+    name: "The Great Khans",
+    structure: [{
+        part: {
+            bracketed: true,
+            filters: [{
+                s: "Borehole Name", p: "=", v: "BH00_"
+            }],
+            linkedParts: [{
+                joiner: "AND",
+                part: {
+                    bracketed: true,
+                    linkedParts: [{
+                        part: {
+                            bracketed: true,
+                            filters: [{
+                                s: "Collar Location", p: "WITHIN", v: "polygon1"
+                            }, {
+                                s: "Borehole Name", p: "=", v: "BH003%"
+                            }],
+                        }
+                    },{
+                        joiner: "OR",
+                        part: {
+                            filters: [{
+                                s: "Borehole Name", p: "=", v: "BH001"
+                            }]
+                        }
+                    }]
+                }
+            },{
+                joiner: "OR",
+                part: {
+                    filters: [{
+                        s: "Borehole Name", p: "=", v: "BH004"
+                    }],
+                }
+            }],
+        }
+    }]
+}
