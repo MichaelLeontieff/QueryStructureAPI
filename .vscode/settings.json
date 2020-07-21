@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/Objects": true,
+    "**/LocalGenerated": true,
+    "**/LocalGenerated/typescript": false,
+    "**/PublicGenerated": true,
+    "**/ImportedInterfaces": true,
+    "**/various": true,
+    "**/.vscode": false,
+    "**/tsconfig.json": false
+  }
+}
